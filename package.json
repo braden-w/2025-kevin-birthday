@@ -1,42 +1,42 @@
 {
-  "name": "2025-kevin-birthday",
-  "version": "0.0.0",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "typecheck": "tsc --noEmit",
-    "dev": "vite --port=3001",
-    "build": "vite build",
-    "serve": "vite preview",
-    "start": "vite",
-    "format": "biome format --write",
-    "lint": "biome lint --write",
-    "format-and-lint": "biome check --write"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
-    "@tanstack/router-plugin": "^1.105.0",
-    "@types/node": "^22.13.4",
-    "@types/react": "^19.0.8",
-    "@types/react-dom": "^19.0.3",
-    "@vitejs/plugin-react": "^4.3.2",
-    "vite": "^6.0.3"
-  },
-  "dependencies": {
-    "@radix-ui/react-slot": "^1.1.2",
-    "@tailwindcss/vite": "^4.0.6",
-    "@tanstack/react-router": "^1.105.0",
-    "@tanstack/router-devtools": "^1.105.0",
-    "@types/canvas-confetti": "^1.9.0",
-    "canvas-confetti": "^1.9.3",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "framer-motion": "^12.4.3",
-    "lucide-react": "^0.475.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "tailwind-merge": "^3.0.1",
-    "tailwindcss": "^4.0.6",
-    "tailwindcss-animate": "^1.0.7"
-  }
+	"name": "2025-kevin-birthday",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"typecheck": "tsc --noEmit",
+		"dev": "vite --port=3001",
+		"build": "vite build",
+		"serve": "vite preview",
+		"start": "vite",
+		"format": "biome format --write",
+		"lint": "biome lint --write",
+		"format-and-lint": "biome check --write"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@tanstack/router-plugin": "^1.105.0",
+		"@types/node": "^22.13.4",
+		"@types/react": "^19.0.8",
+		"@types/react-dom": "^19.0.3",
+		"@vitejs/plugin-react": "^4.3.2",
+		"vite": "^6.0.3"
+	},
+	"dependencies": {
+		"@radix-ui/react-slot": "^1.1.2",
+		"@tailwindcss/vite": "^4.0.6",
+		"@tanstack/react-router": "^1.105.0",
+		"@tanstack/router-devtools": "^1.105.0",
+		"@types/canvas-confetti": "^1.9.0",
+		"canvas-confetti": "^1.9.3",
+		"class-variance-authority": "^0.7.1",
+		"clsx": "^2.1.1",
+		"framer-motion": "^12.4.3",
+		"lucide-react": "^0.475.0",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0",
+		"tailwind-merge": "^3.0.1",
+		"tailwindcss": "^4.0.6",
+		"tailwindcss-animate": "^1.0.7"
+	}
 }
