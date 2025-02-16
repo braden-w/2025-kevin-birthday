@@ -1,4 +1,6 @@
 import { Button } from "@/components/ui/button";
+import { Music } from "lucide-react";
+import { Pause } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export function MusicPlayer() {
@@ -69,13 +71,15 @@ export function MusicPlayer() {
 	};
 
 	return (
-		<div className="fixed bottom-4 left-4 z-50">
-			<Button
+		<div className="fixed top-4 right-4 z-50">
+			<button
 				onClick={togglePlay}
-				aria-label={isPlaying ? "Pause music" : "Play music"}
+				className="bg-white text-purple-600 p-2 rounded-full shadow-lg"
+				type="button"
 			>
-				{isPlaying ? "🔇" : "🎵"}
-			</Button>
+				{isPlaying ? <Pause size={24} /> : <Music size={24} />}
+			</button>
+
 			<div id="yt-player" className="hidden" />
 		</div>
 	);
