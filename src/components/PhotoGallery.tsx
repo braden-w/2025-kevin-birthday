@@ -31,26 +31,23 @@ export function PhotoGallery() {
 		<div className="max-w-2xl mx-auto">
 			<Carousel
 				opts={{
-					align: "start",
+					align: "center",
 					loop: true,
 				}}
-				className="w-full"
 			>
 				<CarouselContent>
 					{photos.map((photo, index) => (
 						<CarouselItem key={index}>
-							<Card className="p-1">
-								<img
-									src={photo.src}
-									alt={photo.alt}
-									className="w-full h-96 object-contain rounded-lg bg-fuchsia-300"
-								/>
-							</Card>
+							<img
+								src={photo.src}
+								alt={photo.alt}
+								className="h-96 object-contain rounded-lg"
+							/>
 						</CarouselItem>
 					))}
 				</CarouselContent>
-				<CarouselPrevious className="left-2" />
-				<CarouselNext className="right-2" />
+				<CarouselPrevious />
+				<CarouselNext />
 			</Carousel>
 		</div>
 	);
