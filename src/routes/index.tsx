@@ -29,7 +29,6 @@ export function Home() {
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				exit={{ opacity: 0 }}
-				className="space-y-16 sm:space-y-24"
 			>
 				{/* Header Section */}
 				<motion.header

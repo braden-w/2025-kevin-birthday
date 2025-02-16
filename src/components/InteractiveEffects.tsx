@@ -26,7 +26,7 @@ export function InteractiveEffects() {
 					size="xl"
 					variant="secondary"
 				>
-					🪑 Rock the Chair!
+					🪑 Rock Unc Kevin's Chair!
 				</Button>
 			</div>
 			<motion.div
