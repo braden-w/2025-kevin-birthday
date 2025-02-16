@@ -38,14 +38,15 @@ export function PhotoGallery() {
 			>
 				<CarouselContent className="-ml-2 md:-ml-4">
 					{photos.map((photo, index) => (
-						<CarouselItem key={index}>
-							<div className="flex items-center justify-center">
-								<img
-									src={photo.src}
-									alt={photo.alt}
-									className="h-96 object-contain rounded-lg"
-								/>
-							</div>
+						<CarouselItem
+							key={index}
+							className="flex items-center justify-center"
+						>
+							<img
+								src={photo.src}
+								alt={photo.alt}
+								className="h-96 object-contain rounded-lg"
+							/>
 						</CarouselItem>
 					))}
 				</CarouselContent>
