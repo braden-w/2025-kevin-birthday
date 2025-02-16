@@ -55,18 +55,10 @@ export function Home() {
 				</motion.header>
 				<InteractiveEffects />
 				<div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 px-4">
-					<Button
-						variant="secondary"
-						className="text-lg py-6 px-8 shadow-lg hover:shadow-xl transition-all"
-						asChild
-					>
+					<Button variant="secondary" size="xl" asChild>
 						<Link to="/quiz">🎯 Take the Quiz!</Link>
 					</Button>
-					<Button
-						variant="secondary"
-						className="text-lg py-6 px-8 shadow-lg hover:shadow-xl transition-all"
-						asChild
-					>
+					<Button size="xl" asChild>
 						<Link to="/wishes">💝 Leave a Wish</Link>
 					</Button>
 				</div>
