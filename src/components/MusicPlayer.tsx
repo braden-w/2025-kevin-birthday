@@ -1,17 +1,10 @@
-import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
 
 export function MusicPlayer() {
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [player, setPlayer] = useState<YTPlayer | null>(null);
 	const [isPlayerReady, setIsPlayerReady] = useState(false);
-
-	// Memoize the cleanup function to avoid dependency issues
-	const cleanupPlayer = useCallback(() => {
-		if (player) {
-			player.pauseVideo();
-		}
-	}, [player]);
 
 	useEffect(() => {
 		// Load YouTube API script
@@ -36,8 +29,12 @@ export function MusicPlayer() {
 			});
 		};
 
-		return cleanupPlayer;
-	}, [cleanupPlayer]);
+		return () => {
+			if (player) {
+				player.pauseVideo();
+			}
+		};
+	}, [player]);
 
 	// Handle autoplay attempt after first user interaction
 	useEffect(() => {
@@ -72,10 +69,9 @@ export function MusicPlayer() {
 	};
 
 	return (
-		<div className="fixed top-4 right-4 z-50">
+		<div className="fixed bottom-4 left-4 z-50">
 			<Button
 				onClick={togglePlay}
-				className="bg-white/90 hover:bg-white/95 backdrop-blur text-purple-800 rounded-full w-12 h-12 p-0 transition-all"
 				aria-label={isPlaying ? "Pause music" : "Play music"}
 			>
 				{isPlaying ? "🔇" : "🎵"}
