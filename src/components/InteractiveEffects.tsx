@@ -17,18 +17,6 @@ export function InteractiveEffects() {
 
 	return (
 		<section className="flex flex-col items-center space-y-16">
-			<div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-				<Button onClick={triggerConfetti} size="xl">
-					✨ Throw Confetti!
-				</Button>
-				<Button
-					onClick={() => setIsRocking(!isRocking)}
-					size="xl"
-					variant="secondary"
-				>
-					🪑 Rock Unc Kevin's Chair!
-				</Button>
-			</div>
 			<motion.div
 				className="size-56"
 				animate={{
@@ -47,6 +35,18 @@ export function InteractiveEffects() {
 					className="w-full h-full object-cover"
 				/>
 			</motion.div>
+			<div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+				<Button onClick={triggerConfetti} size="xl">
+					✨ Throw Confetti!
+				</Button>
+				<Button
+					onClick={() => setIsRocking(!isRocking)}
+					size="xl"
+					variant="secondary"
+				>
+					🪑 Rock Unc Kevin's Chair!
+				</Button>
+			</div>
 		</section>
 	);
 }
