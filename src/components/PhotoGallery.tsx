@@ -42,7 +42,7 @@ export function PhotoGallery() {
 					key={currentIndex}
 					src={photos[currentIndex].src}
 					alt={photos[currentIndex].alt}
-					className="w-full h-96 object-cover rounded-lg shadow-lg"
+					className="w-full h-96 object-contain rounded-lg bg-fuchsia-300 shadow-lg"
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					exit={{ opacity: 0 }}
