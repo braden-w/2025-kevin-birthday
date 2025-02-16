@@ -29,12 +29,12 @@ export function Home() {
 	}, []);
 
 	return (
-		<main className="min-h-screen bg-gradient-to-b from-purple-400 to-pink-500 text-white overflow-x-hidden">
+		<main className="min-h-screen bg-gradient-to-b from-purple-500 via-purple-400 to-pink-500 text-white overflow-x-hidden">
 			<MusicPlayer
 				isPlaying={isMusicPlaying}
 				setIsPlaying={setIsMusicPlaying}
 			/>
-			<div className="max-w-3xl mx-auto px-4 pt-24 pb-12 space-y-32">
+			<div className="max-w-4xl mx-auto px-6 pt-16 pb-24 space-y-16 sm:space-y-24">
 				<AnimatePresence mode="wait">
 					{currentSection === "home" && (
 						<motion.div
@@ -42,18 +42,23 @@ export function Home() {
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
 							exit={{ opacity: 0 }}
-							className="space-y-32"
+							className="space-y-16 sm:space-y-24"
 						>
 							<Header />
 							<InteractiveEffects />
-							<div className="flex justify-center gap-4">
+							<div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 px-4">
 								<Button
 									onClick={() => setCurrentSection("quiz")}
 									variant="secondary"
+									className="text-lg py-6 px-8 shadow-lg hover:shadow-xl transition-all"
 								>
 									🎯 Take the Quiz!
 								</Button>
-								<Button onClick={() => setCurrentSection("wishes")}>
+								<Button
+									onClick={() => setCurrentSection("wishes")}
+									variant="primary"
+									className="text-lg py-6 px-8 shadow-lg hover:shadow-xl transition-all"
+								>
 									💝 Leave a Wish
 								</Button>
 							</div>
@@ -65,12 +70,14 @@ export function Home() {
 							initial={{ opacity: 0, y: 50 }}
 							animate={{ opacity: 1, y: 0 }}
 							exit={{ opacity: 0, y: -50 }}
+							className="space-y-8"
 						>
 							<Quiz onComplete={() => setCurrentSection("wishes")} />
-							<div className="mt-8 flex justify-center">
+							<div className="mt-12 flex justify-center">
 								<Button
 									onClick={() => setCurrentSection("home")}
-									className="bg-white/20 hover:bg-white/30 text-white text-lg"
+									variant="secondary"
+									className="text-lg py-4 px-6 shadow-md hover:shadow-lg transition-all"
 								>
 									👈 Back to Home
 								</Button>
@@ -83,12 +90,14 @@ export function Home() {
 							initial={{ opacity: 0, y: 50 }}
 							animate={{ opacity: 1, y: 0 }}
 							exit={{ opacity: 0, y: -50 }}
+							className="space-y-8"
 						>
 							<MessageWall />
-							<div className="mt-8 flex justify-center">
+							<div className="mt-12 flex justify-center">
 								<Button
 									onClick={() => setCurrentSection("home")}
-									className="bg-white/20 hover:bg-white/30 text-white text-lg"
+									variant="secondary"
+									className="text-lg py-4 px-6 shadow-md hover:shadow-lg transition-all"
 								>
 									👈 Back to Home
 								</Button>
