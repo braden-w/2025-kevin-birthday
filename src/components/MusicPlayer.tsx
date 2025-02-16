@@ -1,28 +1,86 @@
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 
-export function MusicPlayer({ isPlaying, setIsPlaying }) {
-	const audioRef = useRef(null);
+export function MusicPlayer() {
+	const [isPlaying, setIsPlaying] = useState(false);
+	const [player, setPlayer] = useState<YTPlayer | null>(null);
+	const [isPlayerReady, setIsPlayerReady] = useState(false);
+
+	// Memoize the cleanup function to avoid dependency issues
+	const cleanupPlayer = useCallback(() => {
+		if (player) {
+			player.pauseVideo();
+		}
+	}, [player]);
 
 	useEffect(() => {
+		// Load YouTube API script
+		const tag = document.createElement("script");
+		tag.src = "https://www.youtube.com/iframe_api";
+		const firstScriptTag = document.getElementsByTagName("script")[0];
+		firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
+
+		// Initialize player when API is ready
+		window.onYouTubeIframeAPIReady = () => {
+			const newPlayer = new window.YT.Player("yt-player", {
+				height: "0",
+				width: "0",
+				videoId: "AcQjM7gV6mI",
+				events: {
+					onReady: (event) => {
+						const ytPlayer = event.target;
+						setPlayer(ytPlayer);
+						setIsPlayerReady(true);
+					},
+				},
+			});
+		};
+
+		return cleanupPlayer;
+	}, [cleanupPlayer]);
+
+	// Handle autoplay attempt after first user interaction
+	useEffect(() => {
+		const handleFirstInteraction = () => {
+			if (isPlayerReady && player && !isPlaying) {
+				player.playVideo();
+				setIsPlaying(true);
+				// Remove listeners after first interaction
+				document.removeEventListener("click", handleFirstInteraction);
+				document.removeEventListener("touchstart", handleFirstInteraction);
+			}
+		};
+
+		document.addEventListener("click", handleFirstInteraction);
+		document.addEventListener("touchstart", handleFirstInteraction);
+
+		return () => {
+			document.removeEventListener("click", handleFirstInteraction);
+			document.removeEventListener("touchstart", handleFirstInteraction);
+		};
+	}, [isPlayerReady, player, isPlaying]);
+
+	const togglePlay = () => {
+		if (!player) return;
+
 		if (isPlaying) {
-			audioRef.current.play();
+			player.pauseVideo();
 		} else {
-			audioRef.current.pause();
+			player.playVideo();
 		}
-	}, [isPlaying]);
+		setIsPlaying(!isPlaying);
+	};
 
 	return (
 		<div className="fixed top-4 right-4 z-50">
 			<Button
-				onClick={() => setIsPlaying(!isPlaying)}
-				className="bg-white/90 backdrop-blur text-purple-800 rounded-full w-12 h-12 p-0"
+				onClick={togglePlay}
+				className="bg-white/90 hover:bg-white/95 backdrop-blur text-purple-800 rounded-full w-12 h-12 p-0 transition-all"
+				aria-label={isPlaying ? "Pause music" : "Play music"}
 			>
 				{isPlaying ? "🔇" : "🎵"}
 			</Button>
-			<audio ref={audioRef} loop>
-				<source src="/birthday-song.mp3" type="audio/mpeg" />
-			</audio>
+			<div id="yt-player" className="hidden" />
 		</div>
 	);
 }
