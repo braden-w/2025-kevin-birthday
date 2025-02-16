@@ -2,15 +2,24 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, ImageIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import abdielCapitalHat from "@/assets/slideshow/abdiel-capital-hat.webp";
+import chinRestingOnFood from "@/assets/slideshow/chin-resting-on-food.webp";
+import closedEyesInRoom from "@/assets/slideshow/closed-eyes-in-room.webp";
+import gettingFood from "@/assets/slideshow/getting-food.webp";
+import grabbingNapkin from "@/assets/slideshow/grabbing-napkin.webp";
+import hitBySnow from "@/assets/slideshow/hit-by-snow.webp";
+import playingPool from "@/assets/slideshow/playing-pool.webp";
+import pointingAtFood from "@/assets/slideshow/pointing-at-food.webp";
 
 const photos = [
-	{ src: "/placeholder.svg?height=400&width=600", alt: "Kevin's childhood" },
-	{ src: "/placeholder.svg?height=400&width=600", alt: "Kevin's graduation" },
-	{ src: "/placeholder.svg?height=400&width=600", alt: "Kevin being an 'unc'" },
-	{
-		src: "/placeholder.svg?height=400&width=600",
-		alt: "Kevin's recent adventure",
-	},
+	{ src: abdielCapitalHat, alt: "Abdiel with a capital hat" },
+	{ src: chinRestingOnFood, alt: "Chin resting on food" },
+	{ src: closedEyesInRoom, alt: "Closed eyes in a room" },
+	{ src: gettingFood, alt: "Getting food" },
+	{ src: grabbingNapkin, alt: "Grabbing a napkin" },
+	{ src: hitBySnow, alt: "Hit by snow" },
+	{ src: playingPool, alt: "Playing pool" },
+	{ src: pointingAtFood, alt: "Pointing at food" },
 ];
 
 export function PhotoGallery() {
