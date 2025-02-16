@@ -49,14 +49,11 @@ export function Home() {
 							<div className="flex justify-center gap-4">
 								<Button
 									onClick={() => setCurrentSection("quiz")}
-									className="bg-yellow-400 hover:bg-yellow-500 text-purple-800 text-lg px-8 py-6 h-auto"
+									variant="secondary"
 								>
 									🎯 Take the Quiz!
 								</Button>
-								<Button
-									onClick={() => setCurrentSection("wishes")}
-									className="bg-green-400 hover:bg-green-500 text-purple-800 text-lg px-8 py-6 h-auto"
-								>
+								<Button onClick={() => setCurrentSection("wishes")}>
 									💝 Leave a Wish
 								</Button>
 							</div>
