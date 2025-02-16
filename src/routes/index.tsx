@@ -1,7 +1,8 @@
-import { Header } from "@/components/Header";
 import { InteractiveEffects } from "@/components/InteractiveEffects";
 import { Button } from "@/components/ui/button";
-import { Link, createFileRoute } from "@tanstack/react-router";
+import { Quiz } from "@/components/Quiz";
+import { MessageWall } from "@/components/MessageWall";
+import { createFileRoute } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect } from "react";
 
@@ -30,6 +31,7 @@ export function Home() {
 				exit={{ opacity: 0 }}
 				className="space-y-16 sm:space-y-24"
 			>
+				{/* Header Section */}
 				<motion.header
 					className="text-center space-y-16"
 					initial={{ opacity: 0, y: 20 }}
@@ -53,15 +55,42 @@ export function Home() {
 						To the greatest unc that I know ❤️
 					</motion.p>
 				</motion.header>
-				<InteractiveEffects />
-				<div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 px-4">
-					<Button variant="secondary" size="xl" asChild>
-						<Link to="/quiz">🎯 Take the Quiz!</Link>
-					</Button>
-					<Button size="xl" asChild>
-						<Link to="/wishes">💝 Leave a Wish</Link>
-					</Button>
-				</div>
+
+				{/* Interactive Effects Section */}
+				<section className="py-12">
+					<InteractiveEffects />
+				</section>
+
+				{/* Life in Pictures Section */}
+				<section className="py-12">
+					<h2 className="text-4xl md:text-5xl font-bold text-center mb-8">
+						Unc Kevin's Life in Pictures 📸
+					</h2>
+					{/* Add your picture gallery component here */}
+				</section>
+
+				{/* Quiz Section */}
+				<section className="py-12 max-w-3xl mx-auto">
+					<h2 className="text-4xl md:text-5xl font-bold text-center mb-8">
+						How well do you know Unc Kevin? 🤔
+					</h2>
+					<Quiz
+						onComplete={() => {
+							// Scroll to wishes section or handle completion
+							document
+								.getElementById("wishes-section")
+								?.scrollIntoView({ behavior: "smooth" });
+						}}
+					/>
+				</section>
+
+				{/* Wishes Section */}
+				<section id="wishes-section" className="py-12">
+					<h2 className="text-4xl md:text-5xl font-bold text-center mb-8">
+						Leave a Birthday Wish for Unc Kevin! 💝
+					</h2>
+					<MessageWall />
+				</section>
 			</motion.div>
 		</AnimatePresence>
 	);
