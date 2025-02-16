@@ -5,6 +5,7 @@ import { MessageWall } from "@/components/MessageWall";
 import { createFileRoute } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect } from "react";
+import { PhotoGallery } from "@/components/PhotoGallery";
 
 export const Route = createFileRoute("/")({
 	component: Home,
@@ -65,7 +66,7 @@ export function Home() {
 					<h2 className="text-4xl md:text-5xl font-bold text-center mb-8">
 						Unc Kevin's Life in Pictures 📸
 					</h2>
-					{/* Add your picture gallery component here */}
+					<PhotoGallery />
 				</section>
 
 				{/* Quiz Section */}
