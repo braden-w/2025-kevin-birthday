@@ -10,7 +10,7 @@ const photos = [
   { src: "/placeholder.svg?height=400&width=600", alt: "Kevin's recent adventure" },
 ]
 
-export default function PhotoGallery() {
+export function PhotoGallery() {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const nextPhoto = () => {

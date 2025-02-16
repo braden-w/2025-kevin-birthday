@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 
-export default function MessageWall() {
+export function MessageWall() {
   const [messages, setMessages] = useState([])
   const [name, setName] = useState("")
   const [message, setMessage] = useState("")

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 
-export default function FloatingMug() {
+export function FloatingMug() {
   return (
     <motion.div
       className="fixed bottom-8 right-8 z-40 text-7xl"

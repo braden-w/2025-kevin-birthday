@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import confetti from "canvas-confetti"
 import { Button } from "@/components/ui/button"
 
-export default function InteractiveEffects() {
+export function InteractiveEffects() {
   const [isRocking, setIsRocking] = useState(false)
 
   const triggerConfetti = () => {

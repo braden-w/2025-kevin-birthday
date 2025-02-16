@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 
-export default function Header() {
+export function Header() {
   return (
     <motion.header
       className="text-center space-y-16"

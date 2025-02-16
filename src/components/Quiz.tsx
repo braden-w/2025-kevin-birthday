@@ -32,7 +32,7 @@ const questions = [
   },
 ]
 
-export default function Quiz({ onComplete }) {
+export function Quiz({ onComplete }) {
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [score, setScore] = useState(0)
   const [showResult, setShowResult] = useState(false)

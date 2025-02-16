@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 
-export default function MusicPlayer({ isPlaying, setIsPlaying }) {
+export function MusicPlayer({ isPlaying, setIsPlaying }) {
   const audioRef = useRef(null)
 
   useEffect(() => {
