@@ -1,9 +1,8 @@
-"use client";
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import confetti from "canvas-confetti";
 import { Button } from "@/components/ui/button";
+import oldManPng from "@/assets/v7pumq0kpxl3u1biusis.png";
 
 export function InteractiveEffects() {
 	const [isRocking, setIsRocking] = useState(false);
@@ -17,7 +16,7 @@ export function InteractiveEffects() {
 	};
 
 	return (
-		<section className="text-center space-y-16">
+		<section className="flex flex-col items-center space-y-16">
 			<h2 className="text-5xl md:text-6xl font-bold">
 				Celebrate with Unc Kevin! 🎉
 			</h2>
@@ -34,7 +33,7 @@ export function InteractiveEffects() {
 				</Button>
 			</div>
 			<motion.div
-				className="text-9xl"
+				className="size-56"
 				animate={{
 					rotate: isRocking ? [0, 15, -15, 15, -15, 0] : 0,
 					scale: isRocking ? [1, 1.1, 1] : 1,
@@ -45,7 +44,11 @@ export function InteractiveEffects() {
 					repeatType: "reverse",
 				}}
 			>
-				🪑
+				<img
+					src={oldManPng}
+					alt="Old man rocking chair"
+					className="w-full h-full object-cover"
+				/>
 			</motion.div>
 		</section>
 	);
