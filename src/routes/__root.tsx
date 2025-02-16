@@ -10,7 +10,7 @@ export const Route = createRootRoute({
 function RootComponent() {
 	return (
 		<>
-			<main className="min-h-screen bg-gradient-to-b from-purple-500 via-purple-400 to-pink-500 text-white overflow-x-hidden">
+			<main className="pt-24 pb-24 min-h-screen bg-gradient-to-b from-purple-500 via-purple-400 to-pink-500 text-white">
 				<MusicPlayer />
 				<Outlet />
 			</main>
