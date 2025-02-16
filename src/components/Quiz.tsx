@@ -11,12 +11,12 @@ const questions = [
 			"Giving life advice 🧠",
 			"All of the above ✅",
 		],
-		correctAnswer: 3,
+		correctAnswers: [0, 1, 2, 3],
 	},
 	{
 		question: "How old was Kevin when he first became an 'unc'?",
 		options: ["18 🎂", "21 🍻", "23 🎓", "He was born an 'unc' 👶"],
-		correctAnswer: 2,
+		correctAnswers: [3],
 	},
 	{
 		question: "What's Kevin's go-to 'unc' catchphrase?",
@@ -26,7 +26,7 @@ const questions = [
 			"When I was your age... 🗓️",
 			"Who touched the thermostat? 🌡️",
 		],
-		correctAnswer: 1,
+		correctAnswers: [0, 1, 2],
 	},
 ];
 
@@ -36,7 +36,7 @@ export function Quiz() {
 	const [showResult, setShowResult] = useState(false);
 
 	const handleAnswer = (selectedAnswer: number) => {
-		if (selectedAnswer === questions[currentQuestion].correctAnswer) {
+		if (questions[currentQuestion].correctAnswers.includes(selectedAnswer)) {
 			setScore(score + 1);
 		}
 
