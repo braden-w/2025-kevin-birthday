@@ -22,10 +22,7 @@ export function MessageWall() {
 	};
 
 	return (
-		<section className="space-y-8">
-			<h2 className="text-4xl md:text-5xl font-bold text-center">
-				Leave a Birthday Wish for Unc Kevin! 💝
-			</h2>
+		<>
 			<form
 				onSubmit={handleSubmit}
 				className="bg-white/90 backdrop-blur text-purple-800 p-8 rounded-lg shadow-lg space-y-4"
@@ -80,6 +77,6 @@ export function MessageWall() {
 					))}
 				</AnimatePresence>
 			</div>
-		</section>
+		</>
 	);
 }
