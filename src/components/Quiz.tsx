@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -32,12 +30,12 @@ const questions = [
 	},
 ];
 
-export function Quiz({ onComplete }) {
+export function Quiz() {
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [score, setScore] = useState(0);
 	const [showResult, setShowResult] = useState(false);
 
-	const handleAnswer = (selectedAnswer) => {
+	const handleAnswer = (selectedAnswer: number) => {
 		if (selectedAnswer === questions[currentQuestion].correctAnswer) {
 			setScore(score + 1);
 		}
@@ -46,15 +44,11 @@ export function Quiz({ onComplete }) {
 			setCurrentQuestion(currentQuestion + 1);
 		} else {
 			setShowResult(true);
-			onComplete();
 		}
 	};
 
 	return (
-		<section className="space-y-8">
-			<h2 className="text-4xl md:text-5xl font-bold text-center">
-				How well do you know Unc Kevin? 🤔
-			</h2>
+		<>
 			{!showResult ? (
 				<div className="bg-white/90 backdrop-blur text-purple-800 p-8 rounded-lg shadow-lg space-y-6">
 					<h3 className="text-2xl font-semibold">
@@ -63,7 +57,7 @@ export function Quiz({ onComplete }) {
 					<div className="space-y-4">
 						{questions[currentQuestion].options.map((option, index) => (
 							<motion.div
-								key={index}
+								key={option}
 								whileHover={{ scale: 1.02 }}
 								whileTap={{ scale: 0.98 }}
 							>
@@ -95,6 +89,6 @@ export function Quiz({ onComplete }) {
 					</p>
 				</motion.div>
 			)}
-		</section>
+		</>
 	);
 }
