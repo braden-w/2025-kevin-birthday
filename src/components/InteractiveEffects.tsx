@@ -22,15 +22,13 @@ export function InteractiveEffects() {
 				Celebrate with Unc Kevin! 🎉
 			</h2>
 			<div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-				<Button
-					onClick={triggerConfetti}
-					className="bg-yellow-400 hover:bg-yellow-500 text-purple-800 text-lg px-8 py-6 h-auto w-48"
-				>
+				<Button onClick={triggerConfetti} size="xl">
 					✨ Throw Confetti!
 				</Button>
 				<Button
 					onClick={() => setIsRocking(!isRocking)}
-					className="bg-green-400 hover:bg-green-500 text-purple-800 text-lg px-8 py-6 h-auto w-48"
+					size="xl"
+					variant="secondary"
 				>
 					🪑 Rock the Chair!
 				</Button>
