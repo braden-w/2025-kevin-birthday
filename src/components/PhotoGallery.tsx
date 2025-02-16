@@ -34,15 +34,18 @@ export function PhotoGallery() {
 					align: "center",
 					loop: true,
 				}}
+				className="w-full"
 			>
-				<CarouselContent>
+				<CarouselContent className="-ml-2 md:-ml-4">
 					{photos.map((photo, index) => (
 						<CarouselItem key={index}>
-							<img
-								src={photo.src}
-								alt={photo.alt}
-								className="h-96 object-contain rounded-lg"
-							/>
+							<div className="flex items-center justify-center">
+								<img
+									src={photo.src}
+									alt={photo.alt}
+									className="h-96 object-contain rounded-lg"
+								/>
+							</div>
 						</CarouselItem>
 					))}
 				</CarouselContent>
