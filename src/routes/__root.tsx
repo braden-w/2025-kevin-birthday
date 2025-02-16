@@ -1,5 +1,6 @@
-import * as React from "react";
-import { Link, Outlet, createRootRoute } from "@tanstack/react-router";
+import { FloatingMug } from "@/components/FloatingMug";
+import { MusicPlayer } from "@/components/MusicPlayer";
+import { Outlet, createRootRoute } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 
 export const Route = createRootRoute({
@@ -9,27 +10,11 @@ export const Route = createRootRoute({
 function RootComponent() {
 	return (
 		<>
-			<div className="p-2 flex gap-2 text-lg">
-				<Link
-					to="/"
-					activeProps={{
-						className: "font-bold",
-					}}
-					activeOptions={{ exact: true }}
-				>
-					Home
-				</Link>{" "}
-				<Link
-					to="/about"
-					activeProps={{
-						className: "font-bold",
-					}}
-				>
-					About
-				</Link>
-			</div>
-			<hr />
-			<Outlet />
+			<main className="min-h-screen bg-gradient-to-b from-purple-500 via-purple-400 to-pink-500 text-white overflow-x-hidden">
+				<MusicPlayer />
+				<Outlet />
+			</main>
+			<FloatingMug />
 			<TanStackRouterDevtools position="bottom-right" />
 		</>
 	);
