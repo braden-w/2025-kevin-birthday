@@ -1,6 +1,7 @@
 import ReactDOM from 'react-dom/client'
 import { Link, RouterProvider, createRouter } from '@tanstack/react-router'
 import { routeTree } from './routeTree.gen'
+import { Button } from './components/ui/button'
 
 // Set up a Router instance
 const router = createRouter({
@@ -15,9 +16,11 @@ function NotFound() {
       <div className="text-center">
         <h1 className="text-6xl font-bold mb-4">404</h1>
         <p className="text-2xl mb-8">Oops! Looks like Unc Kevin misplaced this page...</p>
-        <Link to="/" className="bg-yellow-400 hover:bg-yellow-500 text-purple-600 font-bold py-2 px-4 rounded">
-          Go Back Home
-        </Link>
+        <Button asChild>
+          <Link to="/" >
+            Go Back Home
+          </Link>
+        </Button>
       </div>
     </div>
   )
