@@ -28,31 +28,29 @@ const photos = [
 
 export function PhotoGallery() {
 	return (
-		<div className="max-w-2xl mx-auto">
-			<Carousel
-				opts={{
-					align: "center",
-					loop: true,
-				}}
-				className="w-full"
-			>
-				<CarouselContent className="-ml-2 md:-ml-4">
-					{photos.map((photo, index) => (
-						<CarouselItem
-							key={index}
-							className="flex items-center justify-center"
-						>
-							<img
-								src={photo.src}
-								alt={photo.alt}
-								className="h-96 object-contain rounded-lg"
-							/>
-						</CarouselItem>
-					))}
-				</CarouselContent>
-				<CarouselPrevious />
-				<CarouselNext />
-			</Carousel>
-		</div>
+		<Carousel
+			opts={{
+				align: "center",
+				loop: true,
+			}}
+			className="w-full"
+		>
+			<CarouselContent className="-ml-2 md:-ml-4">
+				{photos.map((photo, index) => (
+					<CarouselItem
+						key={index}
+						className="flex items-center justify-center"
+					>
+						<img
+							src={photo.src}
+							alt={photo.alt}
+							className="h-96 object-contain rounded-lg"
+						/>
+					</CarouselItem>
+				))}
+			</CarouselContent>
+			<CarouselPrevious />
+			<CarouselNext />
+		</Carousel>
 	);
 }
