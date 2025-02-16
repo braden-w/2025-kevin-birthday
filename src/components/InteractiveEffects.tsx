@@ -17,9 +17,6 @@ export function InteractiveEffects() {
 
 	return (
 		<section className="flex flex-col items-center space-y-16">
-			<h2 className="text-5xl md:text-6xl font-bold">
-				Celebrate with Unc Kevin! 🎉
-			</h2>
 			<div className="flex flex-col sm:flex-row justify-center items-center gap-4">
 				<Button onClick={triggerConfetti} size="xl">
 					✨ Throw Confetti!
