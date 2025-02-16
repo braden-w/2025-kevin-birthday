@@ -74,14 +74,7 @@ export function Home() {
 					<h2 className="text-4xl md:text-5xl font-bold text-center mb-8">
 						How well do you know Unc Kevin? 🤔
 					</h2>
-					<Quiz
-						onComplete={() => {
-							// Scroll to wishes section or handle completion
-							document
-								.getElementById("wishes-section")
-								?.scrollIntoView({ behavior: "smooth" });
-						}}
-					/>
+					<Quiz />
 				</section>
 
 				{/* Wishes Section */}
