@@ -2,7 +2,7 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "2025-kevin-birthday-api",
   "main": "src/index.ts",
-  "compatibility_date": "2025-02-16"
+  "compatibility_date": "2025-02-16",
   // "compatibility_flags": [
   //   "nodejs_compat"
   // ],
@@ -23,11 +23,11 @@
   // ],
   "d1_databases": [
     {
-      "binding": "MY_DB",
-      "database_name": "my-database",
-      "database_id": ""
+      "binding": "DB",
+      "database_name": "2025-kevin-birthday",
+      "database_id": "83ccd0e7-9236-4ebd-8b4f-c8d43cbc81ee"
     }
-  ],
+  ]
   // "ai": {
   //   "binding": "AI"
   // },
