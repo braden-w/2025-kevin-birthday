@@ -75,11 +75,6 @@ function RootComponent() {
 		<div className="relative">
 			<BouncingEmojisBackground />
 			<main className="pt-24 pb-24 min-h-screen relative z-10 text-white">
-				<div className="flex items-center justify-center mb-8">
-					<h1 className="text-4xl font-bold text-center">
-						Bouncing Old Man Emojis
-					</h1>
-				</div>
 				<MusicPlayer />
 				<Outlet />
 			</main>
