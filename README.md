@@ -2,7 +2,9 @@
 
 A fun interactive demo built to celebrate Kevin's 24th birthday. This project combines playful animations, a photo gallery, quizzes, and a custom birthday message—all built with modern web technologies.
 
-## Demo Overview
+## Demo
+
+https://github.com/user-attachments/assets/bc50bfb4-ed91-4367-9fcc-c7ab42fe0211
 
 The demo includes:
 
