@@ -4,7 +4,7 @@ A fun interactive demo built to celebrate Kevin's 24th birthday. This project co
 
 ## Demo
 
-https://github.com/user-attachments/assets/bc50bfb4-ed91-4367-9fcc-c7ab42fe0211
+https://github.com/user-attachments/assets/7c86c9dc-9afc-4a61-9276-1e826f586aee
 
 The demo includes:
 
