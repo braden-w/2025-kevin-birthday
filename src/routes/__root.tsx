@@ -1,4 +1,4 @@
-import { FloatingMug } from "@/components/FloatingMug";
+import { FloatingOldMan } from "@/components/FloatingOldMan";
 import { MusicPlayer } from "@/components/MusicPlayer";
 import { Outlet, createRootRoute } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/router-devtools";
@@ -14,7 +14,7 @@ function RootComponent() {
 				<MusicPlayer />
 				<Outlet />
 			</main>
-			<FloatingMug />
+			<FloatingOldMan />
 			<TanStackRouterDevtools position="bottom-right" />
 		</>
 	);

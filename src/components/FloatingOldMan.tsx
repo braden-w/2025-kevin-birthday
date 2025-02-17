@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export function FloatingMug() {
+export function FloatingOldMan() {
 	return (
 		<motion.div
 			className="fixed bottom-8 right-8 z-40 text-7xl"
@@ -14,7 +14,7 @@ export function FloatingMug() {
 				repeatType: "reverse",
 			}}
 		>
-			🫖
+			👴
 		</motion.div>
 	);
 }
