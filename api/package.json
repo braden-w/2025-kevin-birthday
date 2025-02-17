@@ -5,6 +5,8 @@
     "deploy": "wrangler deploy --minify"
   },
   "dependencies": {
+    "@hono/arktype-validator": "^2.0.0",
+    "arktype": "^2.0.4",
     "drizzle-orm": "^0.39.3",
     "hono": "^4.7.1"
   },
