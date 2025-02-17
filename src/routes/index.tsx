@@ -61,10 +61,10 @@ export function Home() {
 					<InteractiveEffects />
 				</section>
 
-				{/* Life in Pictures Section */}
+				{/* Photo Gallery Section */}
 				<section className="py-12">
 					<h2 className="text-4xl md:text-5xl font-bold text-center mb-8">
-						Unc Kevin's Life in Pictures 📸
+						Unc Kevin's Photo Gallery 📸
 					</h2>
 					<PhotoGallery />
 				</section>
