@@ -1,20 +1,22 @@
-import { motion } from "framer-motion";
-
-export function FloatingOldMan() {
+export function FloatingOldMan({ delay = 0 }: { delay?: number }) {
 	return (
-		<motion.div
-			className="fixed bottom-8 right-8 z-40 text-7xl"
-			animate={{
-				y: [0, -15, 0],
-				rotate: [0, 10, -10, 0],
-			}}
-			transition={{
-				duration: 4,
-				repeat: Number.POSITIVE_INFINITY,
-				repeatType: "reverse",
-			}}
-		>
-			👴
-		</motion.div>
+		<>
+			<div
+				style={{ animationDelay: `${delay}s` }}
+				className="oldman absolute text-7xl"
+			>
+				👴
+			</div>
+			<style>{`
+				.oldman {
+					animation: bounce 5s ease-in-out infinite;
+				}
+				@keyframes bounce {
+					0% { transform: translate(0, 0); }
+					50% { transform: translate(80vw, 80vh); }
+					100% { transform: translate(0, 0); }
+				}
+			`}</style>
+		</>
 	);
 }
