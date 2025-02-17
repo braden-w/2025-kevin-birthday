@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Outlet, createRootRoute } from "@tanstack/react-router";
-import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 import { MusicPlayer } from "@/components/MusicPlayer";
 
 const emojis = ["👴", "👴", "👴", "👴", "👵", "🧓", "🎅"];
@@ -84,7 +83,6 @@ function RootComponent() {
 				<MusicPlayer />
 				<Outlet />
 			</main>
-			<TanStackRouterDevtools position="bottom-right" />
 		</div>
 	);
 }
