@@ -24,9 +24,9 @@ const questions = [
 			"Back in my day... 👴",
 			"Kids these days... 🙄",
 			"When I was your age... 🗓️",
-			"Who touched the thermostat? 🌡️",
+			"The liberal arts education... 🎓",
 		],
-		correctAnswers: [0, 1, 2],
+		correctAnswers: [0, 1, 2, 3],
 	},
 ];
 
