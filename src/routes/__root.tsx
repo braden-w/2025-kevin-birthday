@@ -6,11 +6,11 @@ import { MusicPlayer } from "@/components/MusicPlayer";
 
 const emojis = ["👴", "👴", "👴", "👴", "👵", "🧓", "🎅"];
 
-interface EmojiProps {
+type EmojiProps = {
 	emoji: string;
 	x: number;
 	y: number;
-}
+};
 
 function BouncingEmoji({ emoji, x, y }: EmojiProps) {
 	const randomDuration = Math.random() * 2 + 1; // Between 1 and 3 seconds
