@@ -77,10 +77,10 @@ export function Home() {
 					<Quiz />
 				</section>
 
-				{/* Wishes Section */}
-				<section id="wishes-section" className="py-12">
+				{/* Birthday Message Section */}
+				<section id="message-section" className="py-12">
 					<h2 className="text-4xl md:text-5xl font-bold text-center mb-8">
-						Leave a Birthday Wish for Unc Kevin! 💝
+						A Birthday Note 💝
 					</h2>
 					<MessageWall />
 				</section>

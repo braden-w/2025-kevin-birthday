@@ -1,82 +1,49 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { QuoteIcon } from "lucide-react";
 
 export function MessageWall() {
-	const [messages, setMessages] = useState([]);
-	const [name, setName] = useState("");
-	const [message, setMessage] = useState("");
-
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		if (name.trim() && message.trim()) {
-			setMessages([
-				...messages,
-				{ name: name.trim(), message: message.trim() },
-			]);
-			setName("");
-			setMessage("");
-		}
-	};
-
 	return (
-		<>
-			<form
-				onSubmit={handleSubmit}
-				className="bg-white/90 backdrop-blur text-purple-800 p-8 rounded-lg shadow-lg space-y-4"
-			>
-				<div className="space-y-2">
-					<label htmlFor="name" className="text-lg font-medium">
-						Your Name
-					</label>
-					<Input
-						id="name"
-						value={name}
-						onChange={(e) => setName(e.target.value)}
-						className="text-purple-800"
-						placeholder="Enter your name..."
-						required
-					/>
+		<div className="max-w-3xl mx-auto px-4">
+			<Card className="relative bg-white/95 backdrop-blur border-none shadow-xl overflow-hidden">
+				<div className="absolute top-4 right-4 text-purple-200/20">
+					<QuoteIcon className="h-24 w-24 rotate-180" />
 				</div>
-				<div className="space-y-2">
-					<label htmlFor="message" className="text-lg font-medium">
-						Your Message
-					</label>
-					<Textarea
-						id="message"
-						value={message}
-						onChange={(e) => setMessage(e.target.value)}
-						className="text-purple-800"
-						placeholder="Write your birthday wish..."
-						required
-						rows={4}
-					/>
-				</div>
-				<Button
-					type="submit"
-					className="w-full bg-yellow-400 hover:bg-yellow-500 text-purple-800 text-lg py-6 h-auto"
-				>
-					✉️ Post Wish
-				</Button>
-			</form>
-			<div className="space-y-4">
-				<AnimatePresence>
-					{messages.map((msg, index) => (
-						<motion.div
-							key={index}
-							initial={{ opacity: 0, y: 20 }}
-							animate={{ opacity: 1, y: 0 }}
-							exit={{ opacity: 0, y: -20 }}
-							className="bg-white/90 backdrop-blur text-purple-800 p-6 rounded-lg shadow-lg"
-						>
-							<p className="font-semibold mb-2">{msg.name}</p>
-							<p>{msg.message}</p>
-						</motion.div>
-					))}
-				</AnimatePresence>
-			</div>
-		</>
+				<CardHeader className="pt-8 pb-2">
+					<div className="flex items-center gap-3">
+						<div className="h-10 w-10 rounded-full bg-purple-600 flex items-center justify-center text-white font-semibold shadow-md">
+							B
+						</div>
+						<div className="space-y-1">
+							<h3 className="font-semibold text-lg text-purple-800">Baden</h3>
+							<p className="text-sm text-purple-600/70">
+								With love & gratitude
+							</p>
+						</div>
+					</div>
+				</CardHeader>
+				<CardContent className="pt-4 pb-8">
+					<blockquote className="relative text-purple-800 text-lg leading-relaxed space-y-4">
+						<p>
+							Kev, it's been an absolute honor to witness your journey to
+							unc-hood. We've been through so many experiences together, through
+							thick and thin, and it's crazy to think about how much we've grown
+							and changed since we first met 3 years ago.
+						</p>
+						<p>
+							Your wisdom has always pushed us to dream bigger and think deeper,
+							to forge a path ahead with purpose and an appreciation for the
+							liberal arts. You've brought countless smiles to our faces and new
+							thoughts to our minds.
+						</p>
+						<p>
+							Thank you for being the incredible unc we cherish, and for
+							inspiring us with your unique blend of heart and brilliance. We're
+							incredibly grateful to have you in our lives, and we hope you have
+							a wonderful 24th birthday! 🎉
+						</p>
+					</blockquote>
+				</CardContent>
+			</Card>
+		</div>
 	);
 }
